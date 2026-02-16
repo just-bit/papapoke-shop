@@ -1,0 +1,18 @@
+User-agent: *
+Allow: /*.js*
+Allow: /*.css*
+Allow: /*.png*
+Allow: /*.jpg*
+Allow: /*.gif*
+Allow: /*.webp*
+Disallow: /admin
+Disallow: /wp-admin
+Disallow: /user
+Disallow: /search
+Disallow: /login
+Disallow: /feed*
+Disallow: /?s*
+Disallow: /checkout/
+Disallow: /*?orderby
+
+Sitemap: https://papapoke.co.uk/sitemap_index.xml
