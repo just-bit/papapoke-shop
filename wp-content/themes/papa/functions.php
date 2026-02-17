@@ -1415,3 +1415,23 @@ function preload_main_product_image()
 
 add_image_size('product_preview_pic', 300, 300, false);
 
+
+
+//Disable State/County required
+ 
+add_filter('woocommerce_default_address_fields', function($fields){
+    if (isset($fields['state'])) {
+        $fields['state']['required'] = false;
+    }
+    return $fields;
+}, 999);
+
+
+add_filter('woocommerce_get_country_locale', function($locale){
+    foreach ($locale as $country => $fields) {
+        if (isset($locale[$country]['state'])) {
+            $locale[$country]['state']['required'] = false;
+        }
+    }
+    return $locale;
+}, 999);
