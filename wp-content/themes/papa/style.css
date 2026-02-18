@@ -9986,13 +9986,11 @@ padding: 5px 0;
 
 .order-popup .option-box .btn-group{
 	display: flex;
-	flex-wrap: wrap;
 	gap: 10px;
 }
 
 .order-popup .option-box .btn-group .action-btn{
 	width: 50%;
-	min-width: 230px;
 }
 
 .order-popup__subtitle{
@@ -10140,6 +10138,12 @@ padding: 5px 0;
 	}
 	.header-bot-bar .container{
 		gap: 15px;
+	}
+	.order-popup .option-box .btn-group{
+		flex-wrap: wrap;
+	}
+	.order-popup .option-box .btn-group .action-btn{
+		min-width: 230px;
 	}
 }
 
