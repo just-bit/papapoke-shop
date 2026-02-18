@@ -2565,11 +2565,11 @@ div#my_custom_checkout_field, .wc-delivery-time-response {
 	width: 75px;
 }
 
-.nf__container{
+.nf__container
 	.product-type-img {
 		top: -10px;
 		}
-}
+
 
 @media screen and (max-width: 1024px) {
 .product-type-img {
@@ -2578,7 +2578,7 @@ div#my_custom_checkout_field, .wc-delivery-time-response {
 	}
 }
 
-@media screen and (max-width: 931) {
+@media screen and (max-width: 931px) {
 	.product-type-img {
 		top: -8px;
 		right: -7px;
@@ -9929,15 +9929,3 @@ padding: 5px 0;
 .simple-translate-system-theme{
 	display: none !important;
 }
-
-
-
-
-
-
-
-
-
-
-
-
