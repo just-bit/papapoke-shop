@@ -940,6 +940,10 @@ header
 	/*margin-left: 50px;*/
 }
 
+.main-header-bar-wrap.scroll-header.show{
+	pointer-events: none;
+}
+
 .main-header-bar-wrap .pc__menu li {
 	margin-right: 32px;
 	position: relative;
@@ -4718,6 +4722,7 @@ body.single-product div.product.type-product > .onsale {
 	top: 86px;
 }
 
+
 @media screen and (max-width: 1270px) {
 	body.single-product div.product.type-product > .onsale  {
 		left: 760px;
@@ -5475,7 +5480,14 @@ p.create-account {
 
 .single .product-list {
 	width: 100%;
+	margin-top: 50px;
 }
+
+ @media screen and (max-width: 574px) {
+	 .single .product-list {
+		 margin-top: 30px;
+	 }
+ }
 
 .single .product {
 	display: flex;
