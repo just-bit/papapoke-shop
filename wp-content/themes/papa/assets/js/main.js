@@ -311,7 +311,7 @@ jQuery(function ($) {
 
                             if (isHomePage) {
                                 $('html, body').animate({
-                                    scrollTop: $(".menu-sec").offset().top - 135
+                                    scrollTop: $(".menu-sec").offset().top - 195
                                 }, 800);
                             } else {
                                 window.location.href = "/#menu";
