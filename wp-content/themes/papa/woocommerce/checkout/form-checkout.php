@@ -31,7 +31,9 @@ do_action( 'woocommerce_before_checkout_form', $checkout );
 <form name="checkout" method="post" class="checkout woocommerce-checkout" action="<?php echo esc_url( wc_get_checkout_url() ); ?>" enctype="multipart/form-data">
 
 <div class="checkout-container flex">
-
+    <div class="checkout-notice">
+        <span>Please note:</span> this order must be collected from Papa Poke, 47 Elm Row, Edinburgh EH7 4AH.
+    </div>
 	<div class="checkout-left">
 
 		<?php if ( $checkout->get_checkout_fields() ) : ?>

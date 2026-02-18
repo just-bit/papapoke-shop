@@ -283,6 +283,50 @@ jQuery(function ($) {
 
     setInterval(activateNextDot, 1500);
 
+
+
+    // order popup
+    if (!sessionStorage.getItem('popupShown')) {
+        setTimeout(function() {
+            $.magnificPopup.open({
+                items: {
+                    src: '#order-popup'
+                },
+                type: 'inline',
+                showCloseBtn: true,
+                closeOnBgClick: true,
+                mainClass: 'mfp-fade',
+                removalDelay: 300,
+                callbacks: {
+                    beforeOpen: function () {
+                        $('body').addClass('mfp-open');
+                    },
+                    open: function() {
+                        $('.place-order-btn').on('click', function(e) {
+                            e.preventDefault();
+
+                            $.magnificPopup.close();
+
+                            const isHomePage = window.location.pathname === '/' || window.location.pathname.includes('index');
+
+                            if (isHomePage) {
+                                $('html, body').animate({
+                                    scrollTop: $(".menu-sec").offset().top - 135
+                                }, 800);
+                            } else {
+                                window.location.href = "/#menu";
+                            }
+                        });
+                    },
+                    afterClose: function () {
+                        $('body').removeClass('mfp-open');
+                    }
+                }
+            });
+            sessionStorage.setItem('popupShown', 'true');
+        }, 5000);
+    }
+
 });
 
 // filters

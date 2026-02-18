@@ -31,9 +31,7 @@ defined( 'ABSPATH' ) || exit;
 
 		<div class="ty-right">
 			<div class="ty-right-text">
-				<p class="ty-right-p1">Very soon you
-				will have 
-				your order!</p>
+				<p class="ty-right-p1">Pick up your order at 47 Elm Row, Edinburgh EH7 4AH at 3 PM</p>
 
 				<p class="ty-right-p2">See you soon!</p>
 			</div>

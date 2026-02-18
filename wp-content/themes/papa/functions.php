@@ -449,6 +449,24 @@ require get_template_directory() . '/inc/load-more-products.php';
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 20 );
 add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 45 );
 
+add_action( 'woocommerce_single_product_summary', 'papa_poke_delivery_notice', 70 );
+
+function papa_poke_delivery_notice() {
+    ?>
+    <hr>
+    <div class="product-delivery-notice">
+        <p class="notice-main">
+            This order must be collected from Papa Poke, 47 Elm Row Edinburgh EH7 4AH.
+        </p>
+        <p class="notice-sub">
+            Or you can order delivery via
+            <a href="https://deliveroo.co.uk/menu/edinburgh/calton/papapoke-bowls-and-rolls-47-elm-row?srsltid=AfmBOorh5I3Qj5i5MmDkb8pnWPMkE8-6MnLVZxuV8WIloCkHjOSX1MyT" rel="nofollow" target="_blank">Deliveroo</a> or
+            <a href="https://www.just-eat.co.uk/restaurants-papapoke-bowls-edinburgh/menu" rel="nofollow" target="_blank">Just Eat</a>.
+        </p>
+    </div>
+    <?php
+}
+
 // Remove the product description Title
 add_filter( 'woocommerce_product_description_heading', '__return_null' );
 
