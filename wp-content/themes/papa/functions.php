@@ -1435,3 +1435,57 @@ add_filter('woocommerce_get_country_locale', function($locale){
     }
     return $locale;
 }, 999);
+
+
+// Fix Apple Pay
+add_filter('rest_pre_dispatch', function($result, $server, $request) {
+    $route = $request->get_route();
+
+    if (strpos($route, '/wc/store/v1/checkout') !== false) {
+        $billing = $request->get_param('billing_address');
+        $shipping = $request->get_param('shipping_address');
+
+
+        if (is_array($billing) && !empty($billing['state']) && !empty($billing['country'])) {
+            $validation_util = new \Automattic\WooCommerce\StoreApi\Utilities\ValidationUtils();
+            if (!$validation_util->validate_state($billing['state'], $billing['country'])) {
+                $billing['state'] = '';
+                $request->set_param('billing_address', $billing);
+            }
+        }
+
+        if (is_array($shipping) && !empty($shipping['state']) && !empty($shipping['country'])) {
+            $validation_util = new \Automattic\WooCommerce\StoreApi\Utilities\ValidationUtils();
+            if (!$validation_util->validate_state($shipping['state'], $shipping['country'])) {
+                $shipping['state'] = '';
+                $request->set_param('shipping_address', $shipping);
+            }
+        }
+    }
+
+    return $result;
+}, 5, 3);
+
+add_filter('rest_pre_serve_request', function($served, $result, $request, $server) {
+    if (!is_wp_error($result)) {
+        return $served;
+    }
+
+    $route = $request->get_route();
+
+    if (strpos($route, '/wc/store/v1/checkout') !== false) {
+        $error_codes = $result->get_error_codes();
+
+        foreach ($error_codes as $code) {
+            if ($code === 'invalid_state' || stripos($code, 'state') !== false) {
+                $result->remove($code);
+            }
+        }
+
+        if (!$result->has_errors()) {
+            return true;
+        }
+    }
+
+    return $served;
+}, 999, 4);
