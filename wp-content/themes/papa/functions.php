@@ -37,10 +37,10 @@ add_image_size('product_preview_pic', 300, 300, false);
 //Styles and scrypts
 function add_theme_scripts()
 {
-    wp_enqueue_style('main-style', get_stylesheet_uri(), array(), '1.0.3');
+    wp_enqueue_style('main-style', get_stylesheet_uri(), array(), '1.0.0');
     wp_enqueue_style('main-style-magnific-popup', get_stylesheet_directory_uri() . '/assets/css/magnific-popup.css', array(), '1.0.0');
     wp_enqueue_style('datetimepicker', 'https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.min.css', array(), '2.5.20');
-    wp_enqueue_script('main-js', get_stylesheet_directory_uri() . '/assets/js/main.js', array('jquery'), '1.0.3', true);
+    wp_enqueue_script('main-js', get_stylesheet_directory_uri() . '/assets/js/main.js', array('jquery'), '1.0.0', true);
     wp_enqueue_script('magnific-popup-js', get_stylesheet_directory_uri() . '/assets/js/jquery.magnific-popup.min.js', array('jquery'), '1.0.0', true);
     wp_enqueue_script('datetimepicker', 'https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.full.min.js', array('jquery'), '2.5.20', true);
     wp_enqueue_script('loadmore-products', get_stylesheet_directory_uri() . '/assets/js/loadmore-products.js', array('jquery'), '2.0.3', true);
