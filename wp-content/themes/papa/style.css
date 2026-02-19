@@ -10141,7 +10141,7 @@ padding: 5px 0;
 	border-radius: 8px;
 	border: 3px dashed #FF2B3C;
 	background: rgba(255, 43, 60, 0.05);
-	margin-bottom: 100px;
+	margin-bottom: 36px;
 	padding: 16px 20px;
 	color: #3E6352;
 	font-size: 21px;
@@ -10163,7 +10163,7 @@ padding: 5px 0;
 		gap: 20px;
 	}
 	.checkout-notice{
-		margin-bottom: 70px;
+		margin-bottom: 16px;
 	}
 }
 
