@@ -8725,7 +8725,7 @@ Adaptive mobile
 
 .header-btn {
 	margin-left: auto;
-	margin-right: 50px;
+	margin-right: auto;
 	width: fit-content;
 	background-color: #3E6352;
 	padding: 15px 20px;
@@ -8735,6 +8735,10 @@ Adaptive mobile
 	text-align: center;
 	transition: background-color ease 0.3s;
 	cursor: pointer;
+}
+
+.scroll-header .header-btn{
+	margin-right: 50px;
 }
 
 .header-btn:hover {
@@ -8750,6 +8754,15 @@ Adaptive mobile
 }
 
 @media screen and (max-width: 1080px) {
+	.header-logo {
+		margin-right: 20px;
+	}
+	.scroll-header .header-btn {
+		margin-right: 20px;
+	}
+}
+
+@media screen and (max-width: 940px){
 	.header-btn {
 		margin-right: 20px;
 	}
