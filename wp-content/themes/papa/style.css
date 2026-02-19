@@ -4904,12 +4904,17 @@ ul.woocommerce-shipping-methods li .shipping_method:checked ~ label::after {
 	line-height: 126%;
 }
 
-.woocommerce-error {
+/* .woocommerce-error {
 	position: absolute;
-	top: -56px;
-	left: 264px;
-	display: none;
+    top: -56px;
+    left: 264px;
+    display: none;
+}*/
+
+.woocommerce-error {
+	display: block;
 }
+
 
 .checkout-inline-error-message {
 	margin-bottom: 0 !important;
@@ -9292,8 +9297,14 @@ body.mfp-open {
 
 /* == checkput ====================================== */
 
-.woocommerce-notices-wrapper {
+/*.woocommerce-notices-wrapper {
 	display: none;
+}*/
+
+.woocommerce-notices-wrapper {
+	display: block;
+	margin-left: auto;
+	width: fit-content;
 }
 
 .checkout.woocommerce-checkout {
